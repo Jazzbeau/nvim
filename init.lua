@@ -1,6 +1,7 @@
 require 'core.options'
 require 'core.keymaps'
 
+
 -- Store path to lazyvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 -- If not installed, fetch from repo
@@ -12,10 +13,6 @@ if not vim.uv.fs_stat(lazypath) then
         error('Error cloning lazy.nvim:\n' .. out)
     end
 end
-
--- Setup colorscheme
--- vim.o.background = "dark"
--- vim.cmd([[colorscheme gruvbox]])
 
 vim.opt.rtp:prepend(lazypath)
 
