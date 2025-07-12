@@ -1,7 +1,6 @@
 require 'core.options'
 require 'core.keymaps'
 
-
 -- Store path to lazyvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 -- If not installed, fetch from repo
@@ -18,48 +17,15 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins via LazyVim
 require('lazy').setup({
-	-- NeoTree; file-manager
-	{
-		'nvim-neo-tree/neo-tree.nvim',
-		version = '*',
-		dependencies = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons',
-			'MunifTanjim/nui.nvim',
-		},
-		cmd = 'Neotree',
-	},
-	-- Colourscheme
-	{
-		'ellisonleao/gruvbox.nvim',
-		lazy = false,
-		priority = 1000,
-		config = true,
-		opts = function()
-			require("gruvbox").setup({
-				terminal_colors = true, -- add neovim terminal colors
-				undercurl = true,
-				underline = true,
-				bold = true,
-				italic = {
-					strings = true,
-					emphasis = true,
-					comments = true,
-					operators = false,
-					folds = true,
-				},
-				strikethrough = true,
-				invert_selection = false,
-				invert_signs = false,
-				invert_tabline = false,
-				inverse = true, -- invert background for search, diffs, statuslines and errors
-				contrast = "", -- can be "hard", "soft" or empty string
-				palette_overrides = {},
-				overrides = {},
-				dim_inactive = false,
-				transparent_mode = false,
-			})
-			vim.cmd('colorscheme gruvbox')
-		end,
-	},
+    -- NeoTree; file-manager
+    require 'plugins.theme',
+    require 'plugins.neotree',
+    require 'plugins.bufferline',
+    require 'plugins.lualine',
+    require 'plugins.treesitter',
+    require 'plugins.telescope',
+    require 'plugins.lsp',
+    require 'plugins.autocomplete',
+    require 'plugins.autoformat',
 })
+
