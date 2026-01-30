@@ -33,12 +33,12 @@ vim.o.expandtab = true
 
 vim.diagnostic.config({ virtual_text = true })
 
-vim.lsp.config("lua_ls", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
-	},
-})
+-- vim.lsp.config("lua_ls", {
+-- 	settings = {
+-- 		Lua = {
+-- 			diagnostics = {
+-- 				globals = { "vim" },
+-- 			},
+-- 		},
+-- 	},
+-- })
